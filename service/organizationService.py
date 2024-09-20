@@ -1,6 +1,6 @@
 import random
 from models import organizationModel
-from Schema import organizationSchema
+from DTO import organizationSchema
 from sqlalchemy.orm import Session
 
 
