@@ -3,8 +3,9 @@ from sqlalchemy.orm import Session
 
 from config.database import SessionLocal, engine
 from models import organizationModel
-from Schema import organizationSchema
-from Controller import  organizationController
+from dto import organizationSchema
+from service import  organizationService
+from utils.utils import generate_random_uuid
 
 organizationModel.Base.metadata.create_all(bind=engine)
 
@@ -19,12 +20,13 @@ def get_db():
 
 @app.post('/organization', response_model= organizationSchema.Organization)
 def create_organization(organization: organizationSchema.OrganizationBase, db:Session = Depends(get_db)):
-    return organizationController.create_organization(db=db, organization=organization)
+    
+    return organizationService.create_organization(db=db, organization=organization)
 
 
 @app.get('/organization/{organizationId}', response_model=organizationSchema.Organization)
 def get_organization(organizationId:int, db:Session = Depends(get_db)):
-    return organizationController.get_organization(db=db, organizationId=organizationId)
+    return organizationService.get_organization(db=db, organization_id=organizationId)
 
 
 if __name__ == "__main__":
