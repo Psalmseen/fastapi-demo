@@ -5,6 +5,6 @@ class Organization(Base):
     __tablename__ = 'organization'
 
     id = Column(Integer, primary_key=True)
-    companyRegId = Column(String)
+    companyregid = Column(String)
     name = Column(String)
     address = Column(String)

@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class OrganizationBase(BaseModel):
-    companyRegId:str
+    companyregid:str
     name: str
     address: str
 
