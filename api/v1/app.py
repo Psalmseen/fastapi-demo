@@ -1,11 +1,10 @@
 from fastapi import Depends, FastAPI
 from sqlalchemy.orm import Session
 
-from config.database import SessionLocal, engine
-from models import organizationModel
+from core.config.database import SessionLocal, engine
+from app.models import organizationModel
 from dto import organizationSchema
 from service import  organizationService
-from utils.utils import generate_random_uuid
 
 organizationModel.Base.metadata.create_all(bind=engine)
 

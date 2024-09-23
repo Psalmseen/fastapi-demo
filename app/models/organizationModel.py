@@ -1,4 +1,4 @@
-from config.database import Base
+from core.config.database import Base
 from sqlalchemy import Column, Integer, String
 
 class Organization(Base):
