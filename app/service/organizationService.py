@@ -1,11 +1,11 @@
 from core.utils.utils import generate_random_uuid
 from api.v1.app import organizationModel
-from dto import organizationSchema
+from app.shemas import organizationSchema
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 
 
-def create_organization(db:Session, organization:organizationSchema.OrganizationBase):
+def create_organization(db:Session, organization: organizationSchema.OrganizationBase):
     reg_id = generate_random_uuid()
     print(reg_id)
     # try:

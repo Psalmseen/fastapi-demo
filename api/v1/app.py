@@ -3,8 +3,8 @@ from sqlalchemy.orm import Session
 
 from core.config.database import SessionLocal, engine
 from app.models import organizationModel
-from dto import organizationSchema
-from service import  organizationService
+from app.shemas import organizationSchema
+from app.service import organizationService
 
 organizationModel.Base.metadata.create_all(bind=engine)
 
